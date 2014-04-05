@@ -13,7 +13,8 @@ def lcs_dynamic(X, Y):
                 C[i][j] = C[i - 1][j] if i - 1 > 0 else 0
             else:
                 C[i][j] = C[i][j - 1] if j - 1 > 0 else 0
-    return C
+    print "\n".join([str(v) for v in C])
+    return C[len(X) - 1][len(Y) - 1]
 
 def lcs_recurse(X, Y, i, j, lst, count):
     count += 1
@@ -38,5 +39,6 @@ if __name__ == '__main__':
     X = ['A', 'B', 'C', 'B', 'D', 'A', 'B', 'C', 'D']
     Y = ['B', 'D', 'C', 'A', 'B', 'A', 'C', 'D', 'C']
     D, C = lcs_recurse(X, Y, len(X) - 1, len(Y) - 1, [], 0)
-    print "\n".join([str(v) for v in lcs_dynamic(X, Y)])
+    print "Long common Subsecquence", len(D), D
+    print "Longest Common Subsecquence", lcs_dynamic(X, Y)
     #print D[::-1], C
