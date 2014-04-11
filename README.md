@@ -1,6 +1,8 @@
 Analysis of Algorithms
 ======================
 
+**NOTE**: Experment 12 is only in python as of now.
+
 Contains following.
 
 1.  Experiments upto 12, for practical performance.
